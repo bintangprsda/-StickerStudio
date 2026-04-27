@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
 
 export function useStickerHistory() {
-  const [history, setHistory] = useState([]);
-
-  useEffect(() => {
-    const savedHistory = localStorage.getItem('sticker_history');
-    if (savedHistory) {
-      setHistory(JSON.parse(savedHistory));
+  // Gunakan initializer function agar data langsung dimuat saat pertama kali render
+  const [history, setHistory] = useState(() => {
+    try {
+      const savedHistory = localStorage.getItem('sticker_history');
+      return savedHistory ? JSON.parse(savedHistory) : [];
+    } catch (error) {
+      console.error("Gagal memuat riwayat:", error);
+      return [];
     }
-  }, []);
+  });
 
+  // Hanya simpan ke localStorage jika history berubah
   useEffect(() => {
     localStorage.setItem('sticker_history', JSON.stringify(history));
   }, [history]);
 
   const saveToHistory = (patients) => {
-    if (patients.length === 0 || patients.every(p => !p.name)) return false;
+    // Validasi: Jangan simpan jika semua nama pasien kosong
+    if (patients.length === 0 || patients.every(p => !p.name.trim())) return false;
     
     const newEntry = {
       id: Date.now(),
