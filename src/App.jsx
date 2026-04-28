@@ -12,7 +12,7 @@ function App() {
   const [patients, setPatients] = useState(() => {
     const savedDraft = localStorage.getItem('sticker_current_draft');
     return savedDraft ? JSON.parse(savedDraft) : [
-      { id: Date.now(), name: '', mr: '', birthDate: '', address: '' }
+      { id: Date.now(), name: '', birthDate: '', address: '' }
     ];
   });
   const [showPreview, setShowPreview] = useState(false);
@@ -26,7 +26,7 @@ function App() {
   }, [patients]);
 
   const addPatient = () => {
-    setPatients([...patients, { id: Date.now(), name: '', mr: '', birthDate: '', address: '' }]);
+    setPatients([...patients, { id: Date.now(), name: '', birthDate: '', address: '' }]);
   };
 
   const removePatient = (id) => {

@@ -1,4 +1,4 @@
-import { Trash2, User, Hash, Calendar, MapPin } from 'lucide-react';
+import { Trash2, User, Calendar, MapPin } from 'lucide-react';
 
 export function PatientCard({ patient, index, onRemove, onUpdate }) {
   return (
@@ -17,15 +17,6 @@ export function PatientCard({ patient, index, onRemove, onUpdate }) {
             placeholder="Nama Lengkap" 
             value={patient.name}
             onChange={(e) => onUpdate(patient.id, 'name', e.target.value)}
-          />
-        </div>
-        <div className="input-group">
-          <Hash size={16} />
-          <input 
-            type="text" 
-            placeholder="Nomor MR" 
-            value={patient.mr}
-            onChange={(e) => onUpdate(patient.id, 'mr', e.target.value)}
           />
         </div>
         <div className="input-group">

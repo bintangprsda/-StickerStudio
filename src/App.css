@@ -419,7 +419,7 @@ footer a:hover {
 /* Sticker Styling (Shared between Preview and Print) */
 #print-area {
   display: grid;
-  grid-template-columns: 9cm 9cm;
+  grid-template-columns: 6cm 6cm;
   gap: 0.5cm;
   width: fit-content;
   margin: 0 auto;
@@ -429,7 +429,7 @@ footer a:hover {
 }
 
 .sticker {
-  width: 9cm;
+  width: 6cm;
   height: 2.5cm;
   border: 1px dashed rgba(0, 0, 0, 0.2); /* Lighter dashed border for cutting */
   padding: 8px;
@@ -451,10 +451,7 @@ footer a:hover {
 
 .sticker-row {
   display: flex;
-}
-
-.sticker-row .label {
-  min-width: 80px;
+  margin-bottom: 2px;
 }
 
 /* Print Only Section */
