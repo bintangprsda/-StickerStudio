@@ -34,7 +34,18 @@ function App() {
   };
 
   const updatePatient = (id, field, value) => {
-    setPatients(patients.map(p => p.id === id ? { ...p, [field]: value } : p));
+    let formattedValue = value;
+    
+    if (field === 'name') {
+      formattedValue = value.toUpperCase();
+    } else if (field === 'address') {
+      formattedValue = value
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+    }
+    
+    setPatients(patients.map(p => p.id === id ? { ...p, [field]: formattedValue } : p));
   };
 
   const handleSave = () => {

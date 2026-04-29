@@ -17,7 +17,7 @@ export function Sticker({ patient }) {
           <span className="value">{formatDate(patient.birthDate) || '-'}</span>
         </div>
         <div className="sticker-row">
-          <span className="value">{patient.address || '-'}</span>
+          <span className="value address-value">{patient.address || '-'}</span>
         </div>
       </div>
     </div>

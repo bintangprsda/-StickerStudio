@@ -432,9 +432,9 @@ footer a:hover {
   width: 6cm;
   height: 2.5cm;
   border: 1px dashed rgba(0, 0, 0, 0.2); /* Lighter dashed border for cutting */
-  padding: 8px;
+  padding: 10px; /* Slightly increased padding */
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   color: black;
   display: flex;
   flex-direction: column;
@@ -451,7 +451,13 @@ footer a:hover {
 
 .sticker-row {
   display: flex;
-  margin-bottom: 2px;
+  margin-bottom: 7px; /* Increased a bit more for better visibility without labels */
+  align-items: flex-start;
+}
+
+.value {
+  flex: 1;
+  word-break: break-word;
 }
 
 /* Print Only Section */
